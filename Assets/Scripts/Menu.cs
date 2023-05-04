@@ -22,7 +22,8 @@ public class Menu : MonoBehaviourPunCallbacks
         PhotonNetwork.GameVersion = "1";
         PhotonNetwork.ConnectUsingSettings();
 
-
+        createButton.onClick.AddListener(CreateRoom);
+        joinRandomButton.onClick.AddListener(JoinRandom);
     }
 
     public override void OnConnectedToMaster()
@@ -68,6 +69,7 @@ public class Menu : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         print(PhotonNetwork.NickName + "Entered the room");
+        PhotonNetwork.LoadLevel("Game");
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
