@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        view = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
