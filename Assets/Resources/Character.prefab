@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5639464134832091579}
   - component: {fileID: 5375378016021484542}
   - component: {fileID: 4173813179906435291}
+  - component: {fileID: 8520496500566774401}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
+  m_SynchronizeVelocity: 0
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
@@ -203,6 +204,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31da2c8833cb14e4bac9766653cff583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateSpeed: 10
+--- !u!114 &8520496500566774401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919059202794442588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1529ddfe8a0ca17449a662ba7048bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8663446041967624269, guid: 1525d64bab92b5d47aec1b15477fa2c3, type: 3}
+  shootPoint: {fileID: 0}
 --- !u!1 &5993954558170338025
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +230,6 @@ GameObject:
   - component: {fileID: 7826571739376262882}
   - component: {fileID: 848593568893304849}
   - component: {fileID: 6377276487743824849}
-  - component: {fileID: 6587161352461831853}
   m_Layer: 0
   m_Name: Nose
   m_TagString: Untagged
@@ -287,16 +302,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6587161352461831853
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5993954558170338025}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
