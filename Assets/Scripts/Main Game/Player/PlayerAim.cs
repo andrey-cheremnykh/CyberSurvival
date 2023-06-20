@@ -7,14 +7,15 @@ public class PlayerAim : MonoBehaviour, IPunObservable
 {
     PhotonView view;
     Camera cam;
-
+    Rigidbody rb;
     Vector3 aimPoint;
-
+    Animator playerAnim;
     float rotateSpeed = 10;
 
     // Start is called before the first frame update
     void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         cam = GetComponentInChildren<Camera>();
         view = GetComponent<PhotonView>();
     }
@@ -23,15 +24,23 @@ public class PlayerAim : MonoBehaviour, IPunObservable
     void Update()
     {
         if(view.IsMine == true)
-        {// срабатывает каждый кадр на нашем персонаже
+        {
             Aim();
         }
         else
-        {// делать что-то на персонаже, если это не мой персонаж
+        {
 
         }
         RotateToAim();
 
+    }
+    void HandleAnim()
+    {
+        float angle = Vector3.Angle(rb.velocity, transform.forward);
+        float dot = Vector3.Dot(rb.velocity, transform.right);
+        if (dot < 0) angle = -angle;
+        playerAnim.SetFloat("Angle", angle);
+        
     }
 
     void Aim()
